@@ -1,8 +1,8 @@
-#include "renderobject.h"
+#include "renderitem.h"
 
-int renderObject::objectCount = 1;
+int renderItem::objectCount = 1;
 
-renderObject::renderObject(factoryfloor *_parent, QString _name, float _x, float _y, float _r)
+renderItem::renderItem(factoryfloor *_parent, QString _name, float _x, float _y, float _r)
 {
 
     parent = _parent;
@@ -15,7 +15,7 @@ renderObject::renderObject(factoryfloor *_parent, QString _name, float _x, float
     color = Qt::gray;
 }
 
-void renderObject::paintObject(QPainter &p)
+void renderItem::paintObject(QPainter &p)
 {
     QBrush brush;
     brush.setColor(color);
@@ -26,7 +26,7 @@ void renderObject::paintObject(QPainter &p)
     p.drawText(pos.x(),pos.y(),QString::number(ID));
 }
 
-void renderObject::setPos(float _x, float _y)
+void renderItem::setPos(float _x, float _y)
 {
     x = _x;
     y = _y;
@@ -34,7 +34,7 @@ void renderObject::setPos(float _x, float _y)
     pos.setY(y+r);
 }
 
-QVector2D renderObject::getPos() const
+QVector2D renderItem::getPos() const
 {
     return pos;
 }

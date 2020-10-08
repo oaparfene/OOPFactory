@@ -16,19 +16,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    cargoobject.cpp \
+    cargoitem.cpp \
     factoryfloor.cpp \
-    kinematicobject.cpp \
+    kinematicitem.cpp \
     main.cpp \
     mainwindow.cpp \
-    renderobject.cpp
+    renderitem.cpp
 
 HEADERS += \
-    cargoobject.h \
+    cargoitem.h \
     factoryfloor.h \
-    kinematicobject.h \
+    kinematicitem.h \
     mainwindow.h \
-    renderobject.h
+    renderitem.h
 
 FORMS += \
     mainwindow.ui

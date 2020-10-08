@@ -7,8 +7,8 @@
 #include <QPainter>
 #include <QVector>
 #include <QRandomGenerator>
-#include "kinematicobject.h"
-#include "cargoobject.h"
+#include "kinematicitem.h"
+#include "cargoitem.h"
 
 
 class factoryfloor : public QWidget
@@ -21,15 +21,15 @@ public:
     virtual void paintEvent(QPaintEvent *event);
     void startSim();
     QVector2D get_nearest(QVector2D pos);
-    void removeObject(renderObject* obj);
+    void removeObject(renderItem* obj);
 
 private slots:
     void simulate();
 
 private:
-    QVector<renderObject*> objectList;
+    QVector<renderItem*> itemList;
     void instance_environment();
-    void paint_renderObjects(QPainter &p);
+    void paint_renderItems(QPainter &p);
     QTimer* timer;
 };
 

@@ -10,11 +10,11 @@
 
 class factoryfloor;
 
-class renderObject // renderBase? renderItem, Thing (avoid using the name "Object")
+class renderItem : QObject// renderBase? renderItem, Thing (avoid using the name "Object")
 {
 public:
-    renderObject(factoryfloor* _parent, QString _name, float _x, float _y, float _r);
-    virtual ~renderObject() {};
+    renderItem(factoryfloor* _parent, QString _name, float _x, float _y, float _r);
+    virtual ~renderItem() {};
     void paintObject(QPainter &p);
     void setPos(float _x, float _y);
     virtual void simulate() = 0;

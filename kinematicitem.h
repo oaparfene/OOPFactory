@@ -1,13 +1,13 @@
 #ifndef KINEMATICOBJECT_H
 #define KINEMATICOBJECT_H
 
-#include "renderobject.h"
+#include "renderitem.h"
 
-class kinematicObject : public renderObject
+class kinematicItem : public renderItem
 {
 public:
-    kinematicObject(factoryfloor* _parent, QString _name, float _x, float _y, float _r, float _vel);
-    virtual ~kinematicObject() {};
+    kinematicItem(factoryfloor* _parent, QString _name, float _x, float _y, float _r, float _vel);
+    virtual ~kinematicItem() {};
     void simulate();
 
 private:

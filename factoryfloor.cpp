@@ -13,7 +13,7 @@ void factoryfloor::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
-    paint_renderObjects(p);
+    paint_renderItems(p);
 }
 
 void factoryfloor::instance_environment()
@@ -22,22 +22,22 @@ void factoryfloor::instance_environment()
     {
         float tempx = QRandomGenerator::global()->bounded(50,1000);
         float tempy = QRandomGenerator::global()->bounded(50,1000);
-        cargoObject* obj = new cargoObject(this, "box" + QString::number(i+1), tempx, tempy, 10, 10);
-        objectList.append(obj);
+        cargoItem* obj = new cargoItem(this, "box" + QString::number(i+1), tempx, tempy, 10, 10);
+        itemList.append(obj);
     }
 
 
-    kinematicObject* obj1 = new kinematicObject(this, "robot", 250, 250, 20, 5);
+    kinematicItem* obj1 = new kinematicItem(this, "robot", 250, 250, 20, 5);
 
-    objectList.append(obj1);
+    itemList.append(obj1);
 
 }
 
-void factoryfloor::paint_renderObjects(QPainter &p)
+void factoryfloor::paint_renderItems(QPainter &p)
 {
 
-    QVector<renderObject*>::iterator it;
-    for (it = objectList.begin() ; it != objectList.end() ; it++)
+    QVector<renderItem*>::iterator it;
+    for (it = itemList.begin() ; it != itemList.end() ; it++)
     {
         (*it)->paintObject(p);
     }
@@ -50,21 +50,21 @@ void factoryfloor::startSim()
 
 void factoryfloor::simulate()
 {
-    QVector<renderObject*>::iterator it;
-    for (it = objectList.begin() ; it != objectList.end() ; it++)
+    QVector<renderItem*>::iterator it;
+    for (it = itemList.begin() ; it != itemList.end() ; it++)
     {
         (*it)->simulate();
     }
     update();
 }
 
-void factoryfloor::removeObject(renderObject *obj)
+void factoryfloor::removeObject(renderItem *obj)
 {
-    QVector<renderObject*>::iterator it;
-    for (it = objectList.begin() ; it != objectList.end() ; it++)
+    QVector<renderItem*>::iterator it;
+    for (it = itemList.begin() ; it != itemList.end() ; it++)
     {
         if ((*it)->ID == (*obj).ID)
-            objectList.removeOne((*it));
+            itemList.removeOne((*it));
     }
 }
 
@@ -72,8 +72,8 @@ QVector2D factoryfloor::get_nearest(QVector2D pos)
 {
 
     QVector2D min = QVector2D(1000, 1000);
-    QVector<renderObject*>::iterator it;
-    for (it = objectList.begin() ; it != objectList.end() ; it++)
+    QVector<renderItem*>::iterator it;
+    for (it = itemList.begin() ; it != itemList.end() ; it++)
     {
         QVector2D temp = (*it)->getPos() - pos;
         if (temp.length() < min.length() && temp.length() != 0)
