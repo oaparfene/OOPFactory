@@ -6,7 +6,7 @@
 class cargoItem : public renderItem
 {
 public:
-    cargoItem(factoryfloor* _parent, QString _name, float _x, float _y, float _r, float _weight);
+    cargoItem(warehouseFloor* _parent, QString _name, float _x, float _y, float _r, float _weight);
     virtual ~cargoItem() {};
     void simulate();
 

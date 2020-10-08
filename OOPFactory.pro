@@ -17,18 +17,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cargoitem.cpp \
-    factoryfloor.cpp \
     kinematicitem.cpp \
     main.cpp \
     mainwindow.cpp \
-    renderitem.cpp
+    renderitem.cpp \
+    warehousefloor.cpp
 
 HEADERS += \
     cargoitem.h \
-    factoryfloor.h \
     kinematicitem.h \
     mainwindow.h \
-    renderitem.h
+    renderitem.h \
+    warehousefloor.h
 
 FORMS += \
     mainwindow.ui

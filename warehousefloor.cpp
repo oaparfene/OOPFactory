@@ -1,6 +1,6 @@
-#include "factoryfloor.h"
+#include "warehousefloor.h"
 
-factoryfloor::factoryfloor(QWidget *parent) :
+warehouseFloor::warehouseFloor(QWidget *parent) :
     QWidget(parent)
 {
     timer = new QTimer(nullptr);
@@ -9,14 +9,14 @@ factoryfloor::factoryfloor(QWidget *parent) :
     instance_environment();
 }
 
-void factoryfloor::paintEvent(QPaintEvent *)
+void warehouseFloor::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
     paint_renderItems(p);
 }
 
-void factoryfloor::instance_environment()
+void warehouseFloor::instance_environment()
 {
     for (int i = 0 ; i < 10 ; i++)
     {
@@ -33,7 +33,7 @@ void factoryfloor::instance_environment()
 
 }
 
-void factoryfloor::paint_renderItems(QPainter &p)
+void warehouseFloor::paint_renderItems(QPainter &p)
 {
 
     QVector<renderItem*>::iterator it;
@@ -43,12 +43,12 @@ void factoryfloor::paint_renderItems(QPainter &p)
     }
 }
 
-void factoryfloor::startSim()
+void warehouseFloor::startSim()
 {
     timer->start();
 }
 
-void factoryfloor::simulate()
+void warehouseFloor::simulate()
 {
     QVector<renderItem*>::iterator it;
     for (it = itemList.begin() ; it != itemList.end() ; it++)
@@ -58,7 +58,7 @@ void factoryfloor::simulate()
     update();
 }
 
-void factoryfloor::removeObject(renderItem *obj)
+void warehouseFloor::removeObject(renderItem *obj)
 {
     QVector<renderItem*>::iterator it;
     for (it = itemList.begin() ; it != itemList.end() ; it++)
@@ -68,7 +68,7 @@ void factoryfloor::removeObject(renderItem *obj)
     }
 }
 
-QVector2D factoryfloor::get_nearest(QVector2D pos)
+QVector2D warehouseFloor::get_nearest(QVector2D pos)
 {
 
     QVector2D min = QVector2D(1000, 1000);

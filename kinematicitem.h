@@ -6,7 +6,7 @@
 class kinematicItem : public renderItem
 {
 public:
-    kinematicItem(factoryfloor* _parent, QString _name, float _x, float _y, float _r, float _vel);
+    kinematicItem(warehouseFloor* _parent, QString _name, float _x, float _y, float _r, float _vel);
     virtual ~kinematicItem() {};
     void simulate();
 

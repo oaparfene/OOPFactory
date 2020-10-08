@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QPainter>
-#include "factoryfloor.h"
+#include "warehousefloor.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,6 +24,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    factoryfloor* floor;
+    warehouseFloor* floor;
 };
 #endif // MAINWINDOW_H

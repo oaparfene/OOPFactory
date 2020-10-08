@@ -1,7 +1,7 @@
 #include "cargoitem.h"
-#include "factoryfloor.h"
+#include "warehousefloor.h"
 
-cargoItem::cargoItem(factoryfloor* _parent,QString _name, float _x, float _y, float _r, float _weight) : renderItem(_parent, _name, _x, _y, _r)
+cargoItem::cargoItem(warehouseFloor* _parent,QString _name, float _x, float _y, float _r, float _weight) : renderItem(_parent, _name, _x, _y, _r)
 {
     weight = _weight;
     color = Qt::blue;

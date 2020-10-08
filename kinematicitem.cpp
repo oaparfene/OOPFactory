@@ -1,7 +1,7 @@
 #include "kinematicitem.h"
-#include "factoryfloor.h"
+#include "warehousefloor.h"
 
-kinematicItem::kinematicItem(factoryfloor* _parent, QString _name, float _x, float _y, float _r, float _vel) : renderItem(_parent, _name, _x, _y, _r)
+kinematicItem::kinematicItem(warehouseFloor* _parent, QString _name, float _x, float _y, float _r, float _vel) : renderItem(_parent, _name, _x, _y, _r)
 {
     vel = _vel;
     color = Qt::red;

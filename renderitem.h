@@ -8,12 +8,12 @@
 #include <QTimer>
 #include <QObject>
 
-class factoryfloor;
+class warehouseFloor;
 
 class renderItem : QObject// renderBase? renderItem, Thing (avoid using the name "Object")
 {
 public:
-    renderItem(factoryfloor* _parent, QString _name, float _x, float _y, float _r);
+    renderItem(warehouseFloor* _parent, QString _name, float _x, float _y, float _r);
     virtual ~renderItem() {};
     void paintObject(QPainter &p);
     void setPos(float _x, float _y);
@@ -22,12 +22,12 @@ public:
     int ID;
 
 protected:
-    static int objectCount;
+    static int itemCount;
     float x,y,r; // x,y are for drawing the circles, r is radius
     QVector2D pos; //true position: center of circle
     QString name;
     QColor color;
-    factoryfloor* parent;
+    warehouseFloor* parent;
 
 private:
 

@@ -1,12 +1,12 @@
 #include "renderitem.h"
 
-int renderItem::objectCount = 1;
+int renderItem::itemCount = 1;
 
-renderItem::renderItem(factoryfloor *_parent, QString _name, float _x, float _y, float _r)
+renderItem::renderItem(warehouseFloor *_parent, QString _name, float _x, float _y, float _r)
 {
 
     parent = _parent;
-    ID = objectCount++;
+    ID = itemCount++;
     name = _name;
     x = _x;
     y = _y;

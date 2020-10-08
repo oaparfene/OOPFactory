@@ -1,5 +1,5 @@
-#ifndef FACTORYFLOOR_H
-#define FACTORYFLOOR_H
+#ifndef WAREHOUSEFLOOR_H
+#define WAREHOUSEFLOOR_H
 
 #include <QDebug>
 #include <QColor>
@@ -11,13 +11,13 @@
 #include "cargoitem.h"
 
 
-class factoryfloor : public QWidget
+class warehouseFloor : public QWidget
 {
 
     Q_OBJECT
 public:
-    factoryfloor(QWidget *parent = 0);
-    virtual ~factoryfloor() {};
+    warehouseFloor(QWidget *parent = 0);
+    virtual ~warehouseFloor() {};
     virtual void paintEvent(QPaintEvent *event);
     void startSim();
     QVector2D get_nearest(QVector2D pos);
